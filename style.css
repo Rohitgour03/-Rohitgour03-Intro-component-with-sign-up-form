@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+:root {
+    --primary-Red: hsl(0, 100%, 74%);
+    --primary-Green: hsl(154, 59%, 51%);
+    --Accent_Blue: hsl(248, 32%, 49%);
+    --Dark-Blue: hsl(249, 10%, 26%);
+    --Grayish-Blue: hsl(246, 25%, 77%);
+    --poppins: 'Poppins', sans-serif;
+    --font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: var(--poppins);
+    font-size: var(--font-size);
+    font-weight: 100;
+    background: url(./images/bg-intro-mobile.png) center center repeat;
+    background-color: var(--primary-Red);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 0;
+}
+
+
+/********** Main container **********/
+
+main.wrapper {
+    width: min(90%, 45rem);
+}
+
+
+/* Header section */
+
+header.hero-section {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+
+/* Titile */
+
+#title {
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.3;
+}
+
+
+/* hero text */
+
+.hero-text {
+    color: hsl(0, 0%, 97%);
+    margin-top: 1.5rem;
+}
+
+
+/************ Form Section ************/
+
+.cta-btn {
+    font-size: 1rem;
+    width: 100%;
+    padding-top: 1.125em;
+    padding-bottom: 1.125em;
+    border: none;
+    border-radius: 10px;
+}
+
+.first-cta {
+    color: #fff;
+    font-weight: 100;
+    background: var(--Accent_Blue);
+    margin-bottom: 1.5rem;
+    box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.2);
+    padding-right: 5rem;
+    padding-left: 5rem;
+    line-height: 1.5;
+}
+
+.span-bold {
+    font-weight: 700;
+}
+
+#form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 2em;
+    box-shadow: 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.input-ctn {
+    position: relative;
+    margin-bottom: 1.375rem;
+}
+
+.input {
+    width: 100%;
+    padding: 0.919rem 2em;
+    font: 600 normal 1rem/1.5rem var(--poppins);
+    border: 1px solid var(--Grayish-Blue);
+    border-radius: 5px;
+    position: relative;
+}
+
+.input:focus {
+    border: none;
+    outline: 2px solid var(--Grayish-Blue);
+}
+
+
+/* .show-error  */
+
+.error .input-ctn::before {
+    content: url(./images/icon-error.svg);
+    position: absolute;
+    top: 30%;
+    right: 2rem;
+    z-index: 1;
+}
+
+.error .input {
+    border: none;
+    outline: 2px solid var(--primary-Red);
+}
+
+.error .error-msg {
+    display: block;
+}
+
+.error-msg {
+    font-size: 0.65rem;
+    color: var(--primary-Red);
+    font-style: italic;
+    text-align: right;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.second-cta {
+    color: #fff;
+    font-weight: 500;
+    background: var(--primary-Green);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid hsla(154, 59%, 45%, 0.9);
+    border-bottom: none;
+    box-shadow: 0px -5px 0px 0px hsla(154, 59%, 40%, 0.9) inset;
+    cursor: pointer;
+}
+
+.form-btm-text {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--Grayish-Blue);
+}
+
+.form-btm-text .terms {
+    font-weight: 700;
+    color: var(--primary-Red);
+}
+
+@media screen and (min-width: 62rem) {
+    main.wrapper {
+        display: grid;
+        grid-template-columns: 31.25rem 33.75rem;
+        column-gap: 4.375rem;
+        width: max(70%, 1110px)
+    }
+    header.hero-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        margin-bottom: 0;
+    }
+    section.form-section {
+        width: 33.75rem;
+    }
+    #form {
+        padding: 2.5rem;
+    }
+}
