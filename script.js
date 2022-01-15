@@ -32,8 +32,11 @@ function validateInputs() {
     const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
 
+    let allValid = true;
+
     if (firstNameValue.length === 0) {
         setError(firstName, "First Name cannot be empty");
+        allValid = false;
 
     } else {
         setSuccess(firstName)
@@ -41,23 +44,31 @@ function validateInputs() {
 
     if (lastNameValue.length === 0) {
         setError(lastName, "Last Name cannot be empty");
+        allValid = false;
 
     } else {
         setSuccess(lastName);
     }
 
     if (emailValue.length === 0) {
-        setError(email, "Email cannot be empty")
+        setError(email, "Email cannot be empty");
+        allValid = false;
     } else if (!validateEmail(emailValue)) {
         setError(email, "Looks like this is not an email");
+        allValid = false;
     } else {
         setSuccess(email)
     }
 
     if (passwordValue.length === 0) {
-        setError(password, "Password cannot be empty")
+        setError(password, "Password cannot be empty");
+        allValid = false;
     } else {
         setSuccess(password)
+    }
+
+    if (allValid) {
+        form.submit();
     }
 
 }
